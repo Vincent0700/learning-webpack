@@ -1,0 +1,27 @@
+{
+  "name": "learning-webpack",
+  "version": "0.1.0",
+  "author": "vincent0700 (https://vincentstudio.info)",
+  "email": "wang.yuanqiu007@gmail.com",
+  "description": "A project to learn webpack.",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "build:basic": "rimraf dist && webpack --config=./src/examples/webpack.basic.js",
+    "build:multiple-entries": "rimraf dist && webpack --config=./src/examples/webpack.multiple-entries.js",
+    "lint": "eslint --fix . && prettier --write ./**/*.{md,html,json,css,scss,less}"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.3",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
