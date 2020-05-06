@@ -1,0 +1,9 @@
+html,
+body {
+  background: #ccc;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 100px;
+}

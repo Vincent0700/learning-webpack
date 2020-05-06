@@ -1,6 +1,6 @@
 const path = require('path');
 const PATH_DIST = path.join(__dirname, '../../dist');
-const PATH_TARGET = path.join(__dirname, '../templates');
+const PATH_TARGET = path.join(__dirname, '../templates/basic');
 
 module.exports = {
   mode: 'development',
