@@ -70,7 +70,7 @@ module.exports = {
 
 ## 打包结果
 
-打包后得到了 `bundle-css.js`，其中有 `modules` 有 3 个：
+打包后得到了 `bundle-css.js`，其中有 3 个 `modules`：
 
 1. ./node_modules/css-loader/dist/runtime/api.js
 2. ./src/templates/loaders/test-css.js
