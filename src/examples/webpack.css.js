@@ -1,4 +1,7 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,8 +14,25 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          // 'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       }
     ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+    new OptimizeCssAssetsPlugin()
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, '../../dist'),
+    compress: true,
+    port: 9000
   }
 };

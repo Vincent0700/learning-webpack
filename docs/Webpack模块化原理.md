@@ -1,5 +1,7 @@
 # Webpack 模块化原理
 
+> 本文旨在通过分析 Webpack 打包后代码的方式来探索其模块化原理。
+
 ## 示例源码
 
 ```bash
@@ -12,7 +14,7 @@ $ yarn build:basic
 ### 待打包文件
 
 ```javascript
-// src/templates/utils.js
+// src/templates/basic/utils.js
 export const add = (x, y) => x + y;
 export const num = 10;
 export const obj = { a: { b: 1 } };
@@ -25,7 +27,7 @@ export default {
 ```
 
 ```javascript
-// src/templates/index.js
+// src/templates/basic/index.js
 import utils from './utils';
 
 const result = utils.add(1, 2);
@@ -35,6 +37,7 @@ console.log(result);
 ### Webpack 配置
 
 ```javascript
+// src/examples/webpack.basic.js
 const path = require('path');
 
 module.exports = {
