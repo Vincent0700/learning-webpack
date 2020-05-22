@@ -1,6 +1,6 @@
 # Webpack 动态导入原理
 
-> 本文主要记录了 Webpack import('module').then(...) 动态导入语法的原理，如果对 Webpack 模块化原理不是很了解，可以参考我之前的文章 [Webpack 模块化原理](webpack_module)
+> 本文主要记录了 Webpack import('module').then(...) 动态导入语法的原理，如果对 Webpack 模块化原理不是很了解，可以参考我之前的文章 [Webpack 模块化原理](./Webpack模块化原理.md)
 
 ## 示例源码
 
@@ -331,6 +331,8 @@ module.exports = {
 });
 ```
 
+## 源码分析
+
 从代码中可以发现, `import('utils')` 被翻译成了
 
 ```
@@ -338,7 +340,7 @@ __webpack_require__.e('utils')
   .then(__webpack_require__.bind(null, './src/templates/basic/utils.js'));
 ```
 
-从我之前的文章 [Webpack 模块化原理](webpack_module) 中可以知道 `__webpack_require__(moduleId)` 会先读取缓存，如果缓存没有命中，就会从 `modules` 加载并执行, 现在被嵌入到 `__webpack_require__.e('utils')` 的 `Promise` 回调中, 所以 `__webpack_require__.e('utils')` 应该会异步加载 `utils.js` 到 `modules` 对象, 然后被 `__webpack_require__` 引入执行。
+从我之前的文章 [Webpack 模块化原理](./Webpack模块化原理.md) 中可以知道 `__webpack_require__(moduleId)` 会先读取缓存，如果缓存没有命中，就会从 `modules` 加载并执行, 现在被嵌入到 `__webpack_require__.e('utils')` 的 `Promise` 回调中, 所以 `__webpack_require__.e('utils')` 应该会异步加载 `utils.js` 到 `modules` 对象, 然后被 `__webpack_require__` 引入执行。
 
 那么 `Webpack` 是如何实现异步加载的呢？我们来看一下 `__webpack_require__.e` 的部分代码：
 
@@ -396,5 +398,3 @@ document.head.appendChild(script);
 最后我转一张掘金上看到的图，展示 `Webpack` 异步加载的流程，[文章链接](https://juejin.im/post/5d26e7d1518825290726f67a)
 
 ![](https://user-gold-cdn.xitu.io/2019/7/12/16be5408cd5fedcb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
-
-[webpack_module]: ./Webpack模块化原理.md 'Webpack 模块化原理'
