@@ -8,9 +8,12 @@
   "keywords": [],
   "scripts": {
     "dev:css": "webpack-dev-server --config=./src/examples/webpack.css.js",
+    "dev:async": "webpack-dev-server --config=./src/examples/webpack.async.js",
     "build:basic": "rimraf dist && webpack --config=./src/examples/webpack.basic.js",
     "build:multiple-entries": "rimraf dist && webpack --config=./src/examples/webpack.multiple-entries.js",
     "build:css": "rimraf dist && webpack --config=./src/examples/webpack.css.js",
+    "build:async": "rimraf dist && webpack --config=./src/examples/webpack.async.js",
+    "build:my": "rimraf dist && webpack --config=./src/examples/webpack.my.js",
     "lint": "eslint --fix . && prettier --write ./**/*.{md,html,json,css,scss,less}"
   },
   "devDependencies": {
@@ -20,6 +23,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.3",

@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "name": "Tom",
+      "age": 23,
+      "sex": "male"
+    },
+    {
+      "name": "Sophia",
+      "age": 18,
+      "sex": "female"
+    },
+    {
+      "name": "Jerry",
+      "age": 20,
+      "sex": "male"
+    },
+    {
+      "name": "Debbie",
+      "age": 19,
+      "sex": "female"
+    }
+  ]
+}
