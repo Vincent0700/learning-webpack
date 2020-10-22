@@ -14,6 +14,7 @@
     "build:css": "rimraf dist && webpack --config=./src/examples/webpack.css.js",
     "build:async": "rimraf dist && webpack --config=./src/examples/webpack.async.js",
     "build:my": "rimraf dist && webpack --config=./src/examples/webpack.my.js",
+    "build:hello-plugin": "rimraf dist && webpack --config=./src/examples/webpack.hello-plugin.js",
     "lint": "eslint --fix . && prettier --write ./**/*.{md,html,json,css,scss,less}"
   },
   "devDependencies": {
